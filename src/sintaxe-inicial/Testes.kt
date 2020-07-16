@@ -6,9 +6,10 @@ val lista = listOf(Conta("Gabriel", 4561), Conta("Paola", 4587))
 fun testeFuncionario(){
     val a = Funcionario("Toninho", "11111111111", 3000.0)
 
-    println(a.cpf)
-    println(a.nome)
-    println(a.salario)
+    println(a)
+
+    val ger = Funcionario("Hercules", "33333333333", 10000.0)
+    println(ger)
 }
 
 fun testeConta(){
