@@ -1,15 +1,25 @@
 package `sintaxe-inicial`
 
+import models.CalculadoraBonificacao
 import models.Conta
 import models.Funcionario
+import java.math.BigDecimal
+
 val lista = listOf(Conta("Gabriel", 4561), Conta("Paola", 4587))
 fun testeFuncionario(){
+
     val a = Funcionario("Toninho", "11111111111", 3000.0)
 
     println(a)
 
     val ger = Funcionario("Hercules", "33333333333", 10000.0)
     println(ger)
+
+    val calculadoraBonificacao = CalculadoraBonificacao()
+    calculadoraBonificacao.registra(a)
+    calculadoraBonificacao.registra(ger)
+
+    println(calculadoraBonificacao.total)
 }
 
 fun testeConta(){

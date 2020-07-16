@@ -9,7 +9,7 @@ open class Funcionario(val nome: String,
 
 
     override fun toString(): String {
-        return "Funcionario(nome='$nome', cpf='$cpf', salario=$salario)"
+        return "Funcionario(nome='$nome', cpf='$cpf', salario=$salario, bonificação: $bonificacao)"
     }
 
 
