@@ -1,10 +1,12 @@
 package models
 
-class Conta(var titular: String,
-            val numero: Int) {
+abstract class Conta(
+    var titular: String,
+    val numero: Int
+) {
 
-    private var saldo = 0.0
-        private set
+    var saldo = 0.0
+        protected set
 
 
     override fun toString(): String {
@@ -23,10 +25,6 @@ class Conta(var titular: String,
         return true
     }
 
-    fun getSaldo():Double {
-        return this.saldo
-    }
-
     override fun hashCode(): Int {
         var result = titular.hashCode()
         result = 31 * result + numero
@@ -40,17 +38,14 @@ class Conta(var titular: String,
 
     }
 
-    fun sacar(valor: Double): Boolean {
-        if (saldo >= valor) {
-            this.saldo -= valor
-            return true
-        } else {
-            println("Saldo insuficiente")
-            return false
-        }
-    }
+    abstract fun sacar(valor: Double)
 
     fun transferencia(conta: Conta, valor: Double) {
-        if (sacar(valor)) conta.depositar(valor)
+        if (valor <= saldo) {
+            saldo -= valor
+            conta.depositar(valor)
+        } else {
+            println("saldo insuficiente")
+        }
     }
 }
