@@ -9,9 +9,9 @@ abstract class FuncionarioAdmin(
     nome = nome,
     cpf = cpf,
     salario = salario
-) {
+), Autenticacao{
 
-    fun autentica(senha:String): Boolean {
+    override fun autentica(senha: String): Boolean {
         return this.senha==senha
     }
 

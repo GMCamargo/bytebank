@@ -1,13 +1,20 @@
-package models
+package models.conta
 
 abstract class Conta(
-    var titular: String,
-    val numero: Int
-) {
+    override val titular: String,
+    override val numero: Int,
+    override var saldo:Double = 0.0
+) : ContaBase {
 
-    var saldo = 0.0
-        protected set
+    open fun transferencia(conta: Conta, valor: Double) {
+        if (valor <= saldo) {
+            this.saldo -= valor
+            conta.depositar(valor)
+        } else {
+            println("saldo insuficiente")
+        }
 
+    }
 
     override fun toString(): String {
         return "Conta(titular='$titular', numero=$numero, saldo=$saldo)"
@@ -17,7 +24,7 @@ abstract class Conta(
         if (this === other) return true
         if (javaClass != other?.javaClass) return false
 
-        other as Conta
+        other as ContaBase
 
         if (titular != other.titular) return false
         if (numero != other.numero) return false
@@ -31,21 +38,5 @@ abstract class Conta(
         return result
     }
 
-    fun depositar(valor: Double) {
 
-        this.saldo += valor
-        println("Saldo de ${this.titular} alterado. Novo saldo: ${this.saldo}")
-
-    }
-
-    abstract fun sacar(valor: Double)
-
-    fun transferencia(conta: Conta, valor: Double) {
-        if (valor <= saldo) {
-            saldo -= valor
-            conta.depositar(valor)
-        } else {
-            println("saldo insuficiente")
-        }
-    }
 }
