@@ -1,4 +1,4 @@
-package models.conta
+package br.com.alura.bytebank.models.conta
 
 abstract class Conta(
     override val titular: String,

@@ -1,4 +1,4 @@
-package `sintaxe-inicial`
+package br.com.alura.bytebank.`sintaxe-inicial`
 
 fun mudaSaldo(saldo: Double, novo: Double): Double {
 

@@ -1,6 +1,7 @@
-package models
+package br.com.alura.bytebank.models.funcionario
 
 class Gerente(
+
     nome: String,
     cpf: String,
     salario: Double,

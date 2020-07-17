@@ -1,6 +1,4 @@
-package models.conta
-
-import models.conta.Conta
+package br.com.alura.bytebank.models.conta
 
 class ContaCorrente(
     titular: String,

@@ -1,4 +1,4 @@
-package models.conta
+package br.com.alura.bytebank.models.conta
 
 interface ContaBase{
     val titular: String

@@ -1,10 +1,13 @@
-package `sintaxe-inicial`
+package br.com.alura.bytebank.`sintaxe-inicial`
 
-import models.*
-import models.conta.ContaBase
-import models.conta.ContaCorrente
-import models.conta.ContaPoupanca
-import models.conta.ContaSalario
+import br.com.alura.bytebank.models.*
+import br.com.alura.bytebank.models.conta.ContaBase
+import br.com.alura.bytebank.models.conta.ContaCorrente
+import br.com.alura.bytebank.models.conta.ContaPoupanca
+import br.com.alura.bytebank.models.conta.ContaSalario
+import br.com.alura.bytebank.models.funcionario.Auxiliar
+import br.com.alura.bytebank.models.funcionario.CalculadoraBonificacao
+import br.com.alura.bytebank.models.funcionario.Gerente
 
 fun testeFuncionario() {
 

@@ -1,4 +1,5 @@
-package models
+package br.com.alura.bytebank.models.funcionario
+
 
 class CalculadoraBonificacao{
     var total:Double = 0.0

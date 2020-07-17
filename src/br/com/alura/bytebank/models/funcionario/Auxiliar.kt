@@ -1,4 +1,4 @@
-package models
+package br.com.alura.bytebank.models.funcionario
 
 class Auxiliar(
     nome: String,
